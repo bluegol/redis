@@ -3,9 +3,6 @@ package redis
 import "errors"
 
 var (
-	ErrBug             error
-	ErrShouldNotHappen error
-
 	// ErrProtocol indicates unexpected protocol error
 	ErrProtocol        error
 
@@ -37,12 +34,9 @@ var (
 	InfoQuitDone       error
 )
 
-
+/////////////////////////////////////////////////////////////////////
 
 func init() {
-	ErrBug = errors.New("seems to be a bug.")
-	ErrShouldNotHappen = errors.New("this should not happen")
-
 	ErrProtocol = errors.New("cannot decode according to protocol.")
 
 	ErrRedis = errors.New("redis returned ERR")

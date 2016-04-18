@@ -78,7 +78,7 @@ func readReply(r *bufio.Reader, job *Job) error {
 func readReplyAndReturn(reader *bufio.Reader, job *Job) error {
 	readReply(reader, job)
 	if job.resultCh == nil {
-		return errutil.New(ErrBug, errutil.FullCallStack)
+		return errutil.NewAssert(errutil.MoreInfo, "job resultCh is nil")
 	}
 	job.resultCh <- job
 	close(job.resultCh)

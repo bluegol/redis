@@ -159,7 +159,7 @@ func readUpToCrlf(r *bufio.Reader) ([]byte, error) {
 			errutil.MoreInfo, "cannot read lf after cr",
 			"read_so_far", string(line))
 	} else if c != byteLf {
-		return nil, errutil.New(ErrShouldNotHappen,
+		return nil, errutil.NewAssert(
 			errutil.MoreInfo, "lf doesn't follow cr",
 			"read_so_far", string(line), "read", string(c) )
 	}

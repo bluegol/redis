@@ -163,7 +163,7 @@ func writeBytes(buf *bytes.Buffer, cmd Cmd, args ...interface{}) error {
 				fmt.Sprintf("argNo: %d, type: %T", i+1, a) )
 		}
 		if err != nil {
-			return errutil.Embed(ErrShouldNotHappen, err,
+			return errutil.Embed(errutil.ErrAssert, err,
 				errutil.MoreInfo,
 				fmt.Sprintf("argNo: %d, type: %T", i+1, a) )
 		}
